@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|c:\\users\\labuser\\source\\repos\\appointmentscheduler\\appointmentscheduler\\view\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|solutionrelative:appointmentscheduler\\view\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|c:\\users\\labuser\\source\\repos\\appointmentscheduler\\appointmentscheduler\\view\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|solutionrelative:appointmentscheduler\\view\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|c:\\users\\labuser\\source\\repos\\appointmentscheduler\\appointmentscheduler\\viewmodel\\mainviewmodelproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|solutionrelative:appointmentscheduler\\viewmodel\\mainviewmodelproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|c:\\users\\labuser\\source\\repos\\appointmentscheduler\\appointmentscheduler\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|solutionrelative:appointmentscheduler\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|c:\\users\\labuser\\source\\repos\\appointmentscheduler\\appointmentscheduler\\model\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|solutionrelative:appointmentscheduler\\model\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|c:\\users\\labuser\\source\\repos\\appointmentscheduler\\appointmentscheduler\\view\\converters\\regionconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|solutionrelative:appointmentscheduler\\view\\converters\\regionconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|c:\\users\\labuser\\source\\repos\\appointmentscheduler\\appointmentscheduler\\helpers\\efsqltools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{179F971D-E014-4968-9025-ED3BC70AD737}|AppointmentScheduler\\AppointmentScheduler.csproj|solutionrelative:appointmentscheduler\\helpers\\efsqltools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EFSQLTools.cs",
+              "DocumentMoniker": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\Helpers\\EFSQLTools.cs",
+              "RelativeDocumentMoniker": "AppointmentScheduler\\Helpers\\EFSQLTools.cs",
+              "ToolTip": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\Helpers\\EFSQLTools.cs",
+              "RelativeToolTip": "AppointmentScheduler\\Helpers\\EFSQLTools.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T00:49:27.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\Model\\Appointment.cs",
+              "RelativeDocumentMoniker": "AppointmentScheduler\\Model\\Appointment.cs",
+              "ToolTip": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\Model\\Appointment.cs",
+              "RelativeToolTip": "AppointmentScheduler\\Model\\Appointment.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACMAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T00:49:15.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainViewModelProperties.cs",
+              "DocumentMoniker": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\ViewModel\\MainViewModelProperties.cs",
+              "RelativeDocumentMoniker": "AppointmentScheduler\\ViewModel\\MainViewModelProperties.cs",
+              "ToolTip": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\ViewModel\\MainViewModelProperties.cs",
+              "RelativeToolTip": "AppointmentScheduler\\ViewModel\\MainViewModelProperties.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAA5wCUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T00:36:20.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "AppointmentScheduler\\ViewModel\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "AppointmentScheduler\\ViewModel\\MainViewModel.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T00:33:51.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegionConverter.cs",
+              "DocumentMoniker": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\View\\Converters\\RegionConverter.cs",
+              "RelativeDocumentMoniker": "AppointmentScheduler\\View\\Converters\\RegionConverter.cs",
+              "ToolTip": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\View\\Converters\\RegionConverter.cs",
+              "RelativeToolTip": "AppointmentScheduler\\View\\Converters\\RegionConverter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T00:31:17.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\View\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AppointmentScheduler\\View\\LoginWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\View\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "AppointmentScheduler\\View\\LoginWindow.xaml.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACQAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T00:28:57.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\View\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "AppointmentScheduler\\View\\LoginWindow.xaml",
+              "ToolTip": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\View\\LoginWindow.xaml",
+              "RelativeToolTip": "AppointmentScheduler\\View\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-25T00:27:27.795Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
