@@ -11,28 +11,32 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AppointmentScheduler
+namespace AppointmentScheduler.View
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
+        public MainViewModel vm { get; set; }
         public LoginWindow()
         {
             InitializeComponent();
-            var vm = new MainViewModel();
+            vm = new MainViewModel();
             DataContext = vm;
 
             vm.UserRegion = RegionHelper.GetMachineCurrentLocation(5);
             vm.UserCulture = Thread.CurrentThread.CurrentCulture;
             vm.UserUICulture = Thread.CurrentThread.CurrentUICulture;
 
+            TranslateLoginMenu();
+        }
+
+        public void TranslateLoginMenu()
+        {
             if (vm.UserCulture.Name == "fr-FR")
             {
                 LoginLabel.Content = "nom d'utilisateur";
                 PasswordLabel.Content = "mot de passe";
                 LoginButton.Content = "se connecter";
+
             }
             else if (vm.UserCulture.Name == "en-US")
             {
