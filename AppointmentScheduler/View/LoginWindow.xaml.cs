@@ -1,5 +1,4 @@
-﻿using AppointmentScheduler.Helpers;
-using AppointmentScheduler.ViewModel;
+﻿using AppointmentScheduler.ViewModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,10 +20,9 @@ namespace AppointmentScheduler.View
             InitializeComponent();
             vm = new MainViewModel();
             DataContext = vm;
+            vm.WindowService.Windows.Add(this);
 
-            vm.UserRegion = RegionHelper.GetMachineCurrentLocation(5);
-            vm.UserCulture = Thread.CurrentThread.CurrentCulture;
-            vm.UserUICulture = Thread.CurrentThread.CurrentUICulture;
+            // Test
 
             TranslateLoginMenu();
         }

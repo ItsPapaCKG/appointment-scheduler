@@ -25,7 +25,7 @@ namespace AppointmentScheduler.ViewModel
 			set { inputPassword = value; OnPropertyChanged(); }
 		}
 
-		private string userRegion;
+		private string userRegion = "";
 
 		public string UserRegion
 		{
@@ -33,7 +33,7 @@ namespace AppointmentScheduler.ViewModel
 			set { userRegion = value; OnPropertyChanged(); }
 		}
 
-		private string loginLabel;
+		private string loginLabel = "";
 
 		public string LoginLabel
 		{
@@ -41,7 +41,7 @@ namespace AppointmentScheduler.ViewModel
 			set { loginLabel = value; OnPropertyChanged(); }
 		}
 
-		private string passwordLabel;
+		private string passwordLabel = "";
 
 		public string PasswordLabel
 		{

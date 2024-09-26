@@ -9,8 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="View\Media\calendar-icon.png" />
+    <None Remove="View\Media\customers-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\Media\calendar-icon.png" />
+    <Resource Include="View\Media\customers-icon.png" />
   </ItemGroup>
 	
 </Project>

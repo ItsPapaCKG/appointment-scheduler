@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:AppointmentScheduler"
         xmlns:converters="clr-namespace:AppointmentScheduler.View.Converters"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="Login" Height="300" Width="600">
     <Window.Resources>
         <converters:RegionConverter x:Key="RegionConverter"/>
