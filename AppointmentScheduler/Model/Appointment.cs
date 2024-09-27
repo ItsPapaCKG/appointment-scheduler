@@ -13,9 +13,9 @@ namespace AppointmentScheduler.Model
     public class Appointment
     {
         public int appointmentId { get; set; }
-         
+
         public int customerId { get; set; }
-        
+
         public int userId { get; set; }
         public string title { get; set; }
 
@@ -39,7 +39,7 @@ namespace AppointmentScheduler.Model
 
         public DateTime lastUpdate { get; set; }
 
-        public string lastUpdateBy { get; set; } 
+        public string lastUpdateBy { get; set; }
 
     }
 }

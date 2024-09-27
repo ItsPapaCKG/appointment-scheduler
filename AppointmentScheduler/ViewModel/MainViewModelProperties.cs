@@ -62,7 +62,7 @@ namespace AppointmentScheduler.ViewModel
 				selectedDate = value; 
 				OnPropertyChanged();
 
-				PopulateAppointments<Appointment>("MainAppointmentsList", Connection.Appointments, a => a.start.Date == SelectedDate);
+				PopulateFiltered<Appointment>("MainAppointmentsList", Connection.Appointments, a => a.start.Date == SelectedDate);
 			}
 		}
 

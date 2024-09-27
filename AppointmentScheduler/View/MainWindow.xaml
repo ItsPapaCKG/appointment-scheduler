@@ -12,9 +12,14 @@
         <Calendar Name="userCalendar" SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding}" HorizontalAlignment="Left" Margin="50,180,0,0" VerticalAlignment="Top" Height="166" Width="178" />
         <DataGrid ItemsSource="{Binding MainAppointmentsList}"
                   IsReadOnly="True"
+                  AutoGenerateColumns="False"
                   Margin="275,180,33,36">
             <DataGrid.Columns>
-
+                <DataGridTextColumn Header="Customer" Binding="{Binding customerId}" Width="20*"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding type}" Width="20*"/>
+                <DataGridTextColumn Header="Start Time" Binding="{Binding start}" Width="20*"/>
+                <DataGridTextColumn Header="End Time" Binding="{Binding end}" Width="20*"/>
+                <DataGridTextColumn Header="Consultant" Binding="{Binding userId}" Width="20*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Button" HorizontalAlignment="Left" Margin="50,355,0,0" VerticalAlignment="Top" Height="43" Width="178"/>

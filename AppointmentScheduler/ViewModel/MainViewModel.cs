@@ -83,7 +83,9 @@ namespace AppointmentScheduler.ViewModel
             }
         }
 
-        public void PopulateAppointments<T>(string targetList, IEnumerable<T> list, Expression<Func<T, bool>> pred)
+        // Provide a list (preferably linked to a datagrid from within this model) that would be updated with a filtered list of appointments
+        // Reusable for Customers and Appointments controller windows (filter searches, etc)
+        public void PopulateFiltered<T>(string targetList, IEnumerable<T> list, Expression<Func<T, bool>> pred)
         {
 
             var property = this.GetType().GetProperty(targetList);
