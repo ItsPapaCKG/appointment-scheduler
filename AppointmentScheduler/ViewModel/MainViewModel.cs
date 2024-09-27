@@ -34,6 +34,9 @@ namespace AppointmentScheduler.ViewModel
 
             var nCustomers = Connection.Customers
                                        .Include(c => c.Appointments)
+                                       .Include(c => c.Address )
+                                            .ThenInclude(a => a.City)
+                                                .ThenInclude(c => c.Country)
                                        .ToList();
 
 

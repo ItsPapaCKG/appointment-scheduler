@@ -21,5 +21,7 @@ namespace AppointmentScheduler.Model
         public string createdBy { get; set; }
         public DateTime lastUpdate {  get; set; }
         public string lastUpdatedBy { get; set; }
+
+        public City City { get; set; }
     }
 }

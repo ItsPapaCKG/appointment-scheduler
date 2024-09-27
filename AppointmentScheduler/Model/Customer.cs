@@ -29,5 +29,6 @@ namespace AppointmentScheduler.Model
         public string lastUpdateBy { get; set; }
 
         public ObservableCollection<Appointment> Appointments { get; set; }
+        public Address Address { get; set; }
     }
 }
