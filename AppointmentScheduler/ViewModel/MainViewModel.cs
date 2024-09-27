@@ -16,9 +16,10 @@ using System.Windows;
 
 namespace AppointmentScheduler.ViewModel
 {
-    public partial class MainViewModel : ViewModelBase
+    public sealed partial class MainViewModel : ViewModelBase
     {
         public RelayCommand Authenticate => new(execute => AuthenticateUser(), canExecute => { if (InputUsername != "" && InputPassword != "") { return true; } return false; });
+        public RelayCommand OpenCustomersWindow => new(execute => LoadCustomersWindow(), canExecute => { return true; });
 
         public WindowManagementService WindowService { get; set; }
         public EFSQLTools Connection { get; set; }
@@ -92,6 +93,11 @@ namespace AppointmentScheduler.ViewModel
                     MessageBox.Show(ex.Message);
 
             }
+        }
+
+        public void LoadCustomersWindow()
+        {
+            WindowService.OpenNewWindow<CustomersWindow>();
         }
 
         // Provide a list (preferably linked to a datagrid from within this model) that would be updated with a filtered list of appointments

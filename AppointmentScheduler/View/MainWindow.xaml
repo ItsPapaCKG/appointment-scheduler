@@ -26,7 +26,7 @@
         <Label Content="00:00:00" HorizontalAlignment="Left" Margin="559,16,0,0" VerticalAlignment="Top" Height="47" Width="208" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
         <Label HorizontalAlignment="Left" Margin="424,35,0,0" VerticalAlignment="Top" Height="56" Width="343"  FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
         <Label Content="TODAY" HorizontalAlignment="Left" Margin="424,60,0,0" VerticalAlignment="Top" Height="56" Width="343"  FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-        <Button HorizontalAlignment="Left" Margin="50,16,0,0" VerticalAlignment="Top" Height="120" Width="139">
+        <Button HorizontalAlignment="Left" Margin="50,16,0,0" VerticalAlignment="Top" Height="120" Width="139" Command="{Binding OpenCustomersWindow}">
             <Button.Content>
                 <Grid>
                     <Image Source="Media/customers-icon.png" Width="50" Margin="0,0,0,0"/>
