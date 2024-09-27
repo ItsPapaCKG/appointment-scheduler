@@ -1,5 +1,7 @@
 ﻿using AppointmentScheduler.Helpers;
+using AppointmentScheduler.Model;
 using AppointmentScheduler.View;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using System;
 using System.Collections.Generic;
@@ -24,6 +26,15 @@ namespace AppointmentScheduler.ViewModel
         {
             WindowService = new(this);
             Connection = new();
+
+            var nAppointments = Connection.Appointments
+                                     .Include(p => p.Customer)
+                                     .ToList();
+
+            var nCustomers = Connection.Customers.ToList();
+
+            Appointments = new ObservableCollection<Appointment>(nAppointments);
+            Customers = new ObservableCollection<Customer>(nCustomers);
 
             UserRegion = RegionHelper.GetMachineCurrentLocation(5);
             UserCulture = Thread.CurrentThread.CurrentCulture;

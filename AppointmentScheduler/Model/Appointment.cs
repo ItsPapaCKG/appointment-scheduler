@@ -41,5 +41,7 @@ namespace AppointmentScheduler.Model
 
         public string lastUpdateBy { get; set; }
 
+        public Customer Customer { get; set; }
+
     }
 }

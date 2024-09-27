@@ -15,7 +15,7 @@
                   AutoGenerateColumns="False"
                   Margin="275,180,33,36">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Customer" Binding="{Binding customerId}" Width="20*"/>
+                <DataGridTextColumn Header="Customer" Binding="{Binding Customer.customerName}" Width="20*"/>
                 <DataGridTextColumn Header="Type" Binding="{Binding type}" Width="20*"/>
                 <DataGridTextColumn Header="Start Time" Binding="{Binding start}" Width="20*"/>
                 <DataGridTextColumn Header="End Time" Binding="{Binding end}" Width="20*"/>

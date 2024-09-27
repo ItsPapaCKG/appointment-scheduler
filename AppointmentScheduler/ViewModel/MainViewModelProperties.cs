@@ -62,7 +62,7 @@ namespace AppointmentScheduler.ViewModel
 				selectedDate = value; 
 				OnPropertyChanged();
 
-				PopulateFiltered<Appointment>("MainAppointmentsList", Connection.Appointments, a => a.start.Date == SelectedDate);
+				PopulateFiltered<Appointment>("MainAppointmentsList", Appointments, a => a.start.Date == SelectedDate);
 			}
 		}
 
@@ -77,6 +77,22 @@ namespace AppointmentScheduler.ViewModel
 				OnPropertyChanged(); 
 
 			}
+		}
+
+		private ObservableCollection<Appointment> appointments;
+
+		public ObservableCollection<Appointment> Appointments
+		{
+			get { return appointments; }
+			set { appointments = value; OnPropertyChanged(); }
+		}
+
+		private ObservableCollection<Customer> customers;
+
+		public ObservableCollection<Customer> Customers
+		{
+			get { return customers; }
+			set { customers = value; OnPropertyChanged(); }
 		}
 
 

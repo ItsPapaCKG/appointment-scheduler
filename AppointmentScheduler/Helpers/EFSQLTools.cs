@@ -14,6 +14,8 @@ namespace AppointmentScheduler.Helpers
         public DbSet<User> Users { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+
         private static string connectionString = @"Server=127.0.0.1;Port=3306; Database=client_schedule; User Id=sqlUser; Password=Passw0rd!;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
