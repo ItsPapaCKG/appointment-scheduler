@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\App.xaml
-21183532036
+31448735694
 
-182112145170
+18-1010496688
 2191826362525
-View\LoginWindow.xaml;View\MainWindow.xaml;
+View\CustomersWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;
 
 True
 

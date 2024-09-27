@@ -8,6 +8,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <!--<ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>-->
+
+  <ItemGroup>
+    <Compile Remove="AssemblyInfo.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Remove="View\Media\calendar-icon.png" />
     <None Remove="View\Media\customers-icon.png" />

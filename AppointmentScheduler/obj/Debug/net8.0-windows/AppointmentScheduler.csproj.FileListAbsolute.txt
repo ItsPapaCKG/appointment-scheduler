@@ -1,3 +1,4 @@
+C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\AppointmentScheduler.csproj.AssemblyReference.cache
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\bin\Debug\net8.0-windows\AppointmentScheduler.exe
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\bin\Debug\net8.0-windows\AppointmentScheduler.deps.json
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\bin\Debug\net8.0-windows\AppointmentScheduler.runtimeconfig.json
@@ -29,13 +30,14 @@ C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\bin\Debu
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
-C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\AppointmentScheduler.csproj.AssemblyReference.cache
+C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\CustomersWindow.g.cs
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\LoginWindow.g.cs
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\MainWindow.g.cs
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\AppointmentScheduler_MarkupCompile.cache
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\AppointmentScheduler_MarkupCompile.lref
+C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\CustomersWindow.baml
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\LoginWindow.baml
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\MainWindow.baml
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\AppointmentScheduler.g.resources

@@ -1,4 +1,7 @@
-﻿using System.Configuration;
+﻿using AppointmentScheduler.Model;
+using AppointmentScheduler.View;
+using AppointmentScheduler.ViewModel;
+using System.Configuration;
 using System.Data;
 using System.Windows;
 
@@ -11,7 +14,10 @@ namespace AppointmentScheduler
     {
         public App()
         {
+                
         }
+
+
     }
 
 }
