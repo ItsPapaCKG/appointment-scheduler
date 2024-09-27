@@ -32,7 +32,10 @@ namespace AppointmentScheduler.ViewModel
                                      .Include(p => p.Customer)
                                      .ToList();
 
-            var nCustomers = Connection.Customers.ToList();
+            var nCustomers = Connection.Customers
+                                       .Include(c => c.Appointments)
+                                       .ToList();
+
 
             Appointments = new ObservableCollection<Appointment>(nAppointments);
             Customers = new ObservableCollection<Customer>(nCustomers);

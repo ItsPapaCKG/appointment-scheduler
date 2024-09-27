@@ -13,7 +13,7 @@ namespace AppointmentScheduler.ViewModel
     {
         public RelayCommand AddCustomer => new(execute => AddCustomerWindow(), canExecute => { return true; });
         public RelayCommand UpdateCustomer => new(execute => LoadCustomersWindow(), canExecute => { return true; });
-        public RelayCommand DeleteCustomer => new(execute => { }, canExecute => { return SelectedCustomer is not null; });
+        public RelayCommand DeleteCustomer => new(execute => DeleteCustomerCommand(), canExecute => { return SelectedCustomer is not null; });
 
         public void AddCustomerWindow()
         {
@@ -24,14 +24,30 @@ namespace AppointmentScheduler.ViewModel
         {
 
         } 
-        public void DeleteCustomerWindow() 
+        public void DeleteCustomerCommand() 
         {
             try
             {
                 var existingCustomer = Connection.Customers.FirstOrDefault(c => c.customerId == SelectedCustomer.customerId);
                 if (existingCustomer != null)
                 {
+
+                    // Propogate change by deleting associated appointments
+                    foreach (var appt in existingCustomer.Appointments)
+                    {
+                        Appointment a = Connection.Appointments.FirstOrDefault(ap => ap.appointmentId == appt.appointmentId);
+
+                        if (a is null)
+                        {
+                            continue;
+                        }
+
+                        Connection.Appointments.Remove(a);
+                    }
+
+                    // Delete customer from EF model
                     Connection.Customers.Remove(existingCustomer);
+
                     Connection.SaveChanges();
                 } else
                 {
