@@ -6,13 +6,20 @@
         xmlns:local="clr-namespace:AppointmentScheduler.View"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        DataContext="{Binding}"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <Calendar HorizontalAlignment="Left" Margin="-53,180,0,0" VerticalAlignment="Top" Height="167" Width="382" />
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="275,180,33,36"/>
+        <Calendar Name="userCalendar" SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding}" HorizontalAlignment="Left" Margin="50,180,0,0" VerticalAlignment="Top" Height="166" Width="178" />
+        <DataGrid ItemsSource="{Binding MainAppointmentsList}"
+                  IsReadOnly="True"
+                  Margin="275,180,33,36">
+            <DataGrid.Columns>
+
+            </DataGrid.Columns>
+        </DataGrid>
         <Button Content="Button" HorizontalAlignment="Left" Margin="50,355,0,0" VerticalAlignment="Top" Height="43" Width="178"/>
         <Label Content="00:00:00" HorizontalAlignment="Left" Margin="559,16,0,0" VerticalAlignment="Top" Height="47" Width="208" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-        <Label Content="Wednesday, September 25th, 2024" HorizontalAlignment="Left" Margin="424,35,0,0" VerticalAlignment="Top" Height="56" Width="343"  FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <Label HorizontalAlignment="Left" Margin="424,35,0,0" VerticalAlignment="Top" Height="56" Width="343"  FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
         <Label Content="TODAY" HorizontalAlignment="Left" Margin="424,60,0,0" VerticalAlignment="Top" Height="56" Width="343"  FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
         <Button HorizontalAlignment="Left" Margin="50,16,0,0" VerticalAlignment="Top" Height="120" Width="139">
             <Button.Content>

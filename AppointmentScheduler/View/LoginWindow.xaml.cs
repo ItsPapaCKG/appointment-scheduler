@@ -22,8 +22,6 @@ namespace AppointmentScheduler.View
             DataContext = vm;
             vm.WindowService.Windows.Add(this);
 
-            // Test
-
             TranslateLoginMenu();
         }
 

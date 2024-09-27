@@ -18,9 +18,11 @@ namespace AppointmentScheduler.Helpers
 
         public ViewModelBase ViewModel { get; set; }
 
-        public WindowManagementService()
+        public WindowManagementService(ViewModelBase vm)
         {
             Windows = new ObservableCollection<Window>();
+
+            ViewModel = vm;
         }
 
         public void CloseActiveWindow()
@@ -38,6 +40,7 @@ namespace AppointmentScheduler.Helpers
         public void OpenNewWindow<windowType>() where windowType : Window, new()
         {
             Window w = new windowType();
+            w.DataContext = ViewModel;
 
             Windows.Add(w);
             ActiveWindow = w;

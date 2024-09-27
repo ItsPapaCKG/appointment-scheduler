@@ -1,5 +1,8 @@
-﻿using System;
+﻿using AppointmentScheduler.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -48,6 +51,34 @@ namespace AppointmentScheduler.ViewModel
 			get { return passwordLabel; }
 			set { passwordLabel = value; OnPropertyChanged(); }
 		}
+
+		private DateTime? selectedDate;
+
+		public DateTime? SelectedDate
+		{
+			get { return selectedDate; }
+			set 
+			{ 
+				selectedDate = value; 
+				OnPropertyChanged();
+
+				PopulateAppointments<Appointment>("MainAppointmentsList", Connection.Appointments, a => a.start.Date == SelectedDate);
+			}
+		}
+
+		private ObservableCollection<Appointment> mainAppointmentsList = new ObservableCollection<Appointment>();
+
+		public ObservableCollection<Appointment> MainAppointmentsList
+		{
+			get { return mainAppointmentsList; }
+			set 
+			{ 
+				mainAppointmentsList = value;
+				OnPropertyChanged(); 
+
+			}
+		}
+
 
 		public CultureInfo UserCulture { get; set; }
 
