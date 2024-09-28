@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AppointmentScheduler.ViewModel
 {
-    public abstract class ViewModelBase : INotifyPropertyChanged
+    public abstract class PropChangedBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 

@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppointmentScheduler.View"
         mc:Ignorable="d"
-        Title="AddUpdateCustomer" Height="450" Width="800">
-    <Grid>
-        
+        Title="AddUpdateCustomer" Height="450" Width="500">
+    <Grid Margin="0,17,0,-17">
+        <Label Content="" HorizontalAlignment="Left" Margin="80,59,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="31,98,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,98,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="329" Height="25"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="329" Height="25"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="38,58,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="85,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <Label Content="City" HorizontalAlignment="Left" Margin="49,158,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="85,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <Label Content="Postal Code" HorizontalAlignment="Left" Margin="260,158,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="333,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="81" Height="25"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="36,0,0,0" VerticalAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Margin="85,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="86,352,0,0" VerticalAlignment="Top" Height="36" Width="86"/>
+
     </Grid>
 </Window>

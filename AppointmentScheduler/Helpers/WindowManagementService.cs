@@ -16,9 +16,9 @@ namespace AppointmentScheduler.Helpers
 
         public Window ActiveWindow { get; set; }
 
-        public ViewModelBase ViewModel { get; set; }
+        public PropChangedBase ViewModel { get; set; }
 
-        public WindowManagementService(ViewModelBase vm)
+        public WindowManagementService(PropChangedBase vm)
         {
             Windows = new ObservableCollection<Window>();
 

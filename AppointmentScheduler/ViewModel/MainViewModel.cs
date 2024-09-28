@@ -16,7 +16,7 @@ using System.Windows;
 
 namespace AppointmentScheduler.ViewModel
 {
-    public sealed partial class MainViewModel : ViewModelBase
+    public sealed partial class MainViewModel : PropChangedBase
     {
         public RelayCommand Authenticate => new(execute => AuthenticateUser(), canExecute => { if (InputUsername != "" && InputPassword != "") { return true; } return false; });
         public RelayCommand OpenCustomersWindow => new(execute => LoadCustomersWindow(), canExecute => { return true; });
