@@ -95,6 +95,32 @@ namespace AppointmentScheduler.ViewModel
 			set { customers = value; OnPropertyChanged(); }
 		}
 
+		private ObservableCollection<Address> addresses;
+
+		public ObservableCollection<Address> Addresses
+		{
+			get { return addresses; }
+			set { addresses = value; OnPropertyChanged(); }
+		}
+
+		private ObservableCollection<City> cities;
+
+		public ObservableCollection<City> Cities
+		{
+			get { return cities; }
+			set { cities = value; OnPropertyChanged(); }
+		}
+
+		private ObservableCollection<Country> countries;
+
+		public ObservableCollection<Country> Countries
+		{
+			get { return countries; }
+			set { countries = value; OnPropertyChanged(); }
+		}
+
+
+
 
 		public CultureInfo UserCulture { get; set; }
 

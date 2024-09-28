@@ -33,6 +33,7 @@ namespace AppointmentScheduler.Model
 
         [NotMapped]
         private ObservableCollection<Appointment> _appointments;
+
         public ObservableCollection<Appointment> Appointments 
         { 
             get {  return _appointments; }

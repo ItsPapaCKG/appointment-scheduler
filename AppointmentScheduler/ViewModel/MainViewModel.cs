@@ -28,20 +28,7 @@ namespace AppointmentScheduler.ViewModel
             WindowService = new(this);
             Connection = new();
 
-            var nAppointments = Connection.Appointments
-                                     .Include(p => p.Customer)
-                                     .ToList();
-
-            var nCustomers = Connection.Customers
-                                       .Include(c => c.Appointments)
-                                       .Include(c => c.Address )
-                                            .ThenInclude(a => a.City)
-                                                .ThenInclude(c => c.Country)
-                                       .ToList();
-
-
-            Appointments = new ObservableCollection<Appointment>(nAppointments);
-            Customers = new ObservableCollection<Customer>(nCustomers);
+            PopulateEFCollections();
 
             UserRegion = RegionHelper.GetMachineCurrentLocation(5);
             UserCulture = Thread.CurrentThread.CurrentCulture;
@@ -123,6 +110,47 @@ namespace AppointmentScheduler.ViewModel
 
                 property.SetValue(this, newcollection);
             }
+        }
+
+        public void PopulateEFCollections()
+        {
+            var nAppointments = Connection.Appointments
+                                     .Include(p => p.Customer)
+                                     .OrderBy(a => a.appointmentId)
+                                     .ToList();
+
+            var nCustomers = Connection.Customers
+                                       .Include(c => c.Appointments)
+                                       .Include(c => c.Address)
+                                            .ThenInclude(a => a.City)
+                                                .ThenInclude(c => c.Country)
+                                       .OrderBy(c => c.customerId)
+                                       .ToList();
+
+            var nAddresses = Connection.Addresses
+                                       .Include(a => a.City)
+                                            .ThenInclude(c => c.Country)
+                                       .OrderBy(a => a.addressId)
+                                       .ToList();
+
+            var nCities = Connection.Cities
+                                       .Include(a => a.Country)
+                                       .OrderBy(c => c.cityId)
+                                       .ToList();
+
+            var nCountries = Connection.Countries.OrderBy(c => c.countryId).ToList();
+
+            Appointments = new ObservableCollection<Appointment>(nAppointments);
+            Customers = new ObservableCollection<Customer>(nCustomers);
+            Addresses = new ObservableCollection<Address>(nAddresses);
+            Cities = new ObservableCollection<City>(nCities);
+            Countries = new ObservableCollection<Country>(nCountries);
+        }
+
+        public void ApplyConnectionChanges()
+        {
+            Connection.SaveChanges();
+            PopulateEFCollections();
         }
     }
 }

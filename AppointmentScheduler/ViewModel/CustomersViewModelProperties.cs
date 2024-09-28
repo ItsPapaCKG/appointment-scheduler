@@ -1,5 +1,6 @@
 ﻿using AppointmentScheduler.Helpers;
 using AppointmentScheduler.Model;
+using AppointmentScheduler.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace AppointmentScheduler.ViewModel
 
         public void AddCustomerWindow()
         {
-            
+            WindowService.OpenNewWindow<AddUpdateCustomer>();
         }
 
         public void UpdateCustomerWindow()
@@ -49,6 +50,7 @@ namespace AppointmentScheduler.ViewModel
                     Connection.Customers.Remove(existingCustomer);
 
                     Connection.SaveChanges();
+                    PopulateEFCollections();
                 } else
                 {
                     throw new Exception("Selected customer does not exist in MySQL database - Customer already absent from system.");

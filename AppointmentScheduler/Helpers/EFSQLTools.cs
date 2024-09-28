@@ -13,6 +13,9 @@ namespace AppointmentScheduler.Helpers
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
 
