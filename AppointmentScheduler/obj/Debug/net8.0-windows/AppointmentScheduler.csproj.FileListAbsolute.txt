@@ -54,3 +54,5 @@ C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debu
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\ref\AppointmentScheduler.dll
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\AddUpdateCustomer.g.cs
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\AddUpdateCustomer.baml
+C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\AppointmentsWindow.g.cs
+C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\AppointmentsWindow.baml
