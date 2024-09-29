@@ -61,7 +61,7 @@ namespace AppointmentScheduler.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AppointmentScheduler;V1.0.0.0;component/view/addupdatecustomer.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AppointmentScheduler;component/view/addupdatecustomer.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\AddUpdateCustomer.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

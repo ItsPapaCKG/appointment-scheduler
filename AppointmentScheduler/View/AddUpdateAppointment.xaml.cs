@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,16 @@ namespace AppointmentScheduler.View
         public AddUpdateAppointment()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_Time(object sender, TextCompositionEventArgs e)
+        {
+            string regexData = @"^[0-9:]+$";
+
+            if (!Regex.IsMatch(e.Text, regexData))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

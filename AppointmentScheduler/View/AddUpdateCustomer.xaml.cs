@@ -14,6 +14,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Resources;
 using System.Windows.Shapes;
 
 namespace AppointmentScheduler.View
@@ -50,7 +51,6 @@ namespace AppointmentScheduler.View
 
         private void TextBox_Ints(object sender, TextCompositionEventArgs e)
         {
-            TextBox textbox = sender as TextBox;
 
             string regexData = @"^\d+$";
 
@@ -62,8 +62,6 @@ namespace AppointmentScheduler.View
 
         private void TextBox_Phone(object sender, TextCompositionEventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-
             string regexData = @"^[0-9-]+$";
 
             if (!Regex.IsMatch(e.Text, regexData))

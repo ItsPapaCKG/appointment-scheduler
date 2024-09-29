@@ -9,6 +9,21 @@ namespace AppointmentScheduler.ViewModel
 {
     public partial class MainViewModel
     {
+
+
+		public DateTime CombineDateAndTime(DateTime date, string time)
+		{
+			string[] t = time.Split(":");
+			int hours = int.Parse(t[0]);
+			int minutes = int.Parse(t[1]);
+
+			DateTime newDT = date.AddHours(hours).AddMinutes(minutes);
+
+			newDT = TimeZoneInfo.ConvertTimeToUtc(newDT);
+
+			return newDT;
+		}
+
 		private Customer selectedApptCustomer;
 
 		public Customer SelectedApptCustomer
@@ -58,7 +73,7 @@ namespace AppointmentScheduler.ViewModel
 		public string InputContact
 		{
 			get { return inputContact; }
-			set { inputContact = value; }
+			set { inputContact = value; OnPropertyChanged(); }
 		}
 
 		private string inputURL;
@@ -66,7 +81,7 @@ namespace AppointmentScheduler.ViewModel
 		public string InputURL
 		{
 			get { return inputURL; }
-			set { inputURL = value; }
+			set { inputURL = value; OnPropertyChanged(); }
 		}
 
 		private DateTime inputStartDate;
@@ -90,7 +105,7 @@ namespace AppointmentScheduler.ViewModel
 		public string InputStartTime
 		{
 			get { return inputStartTime; }
-			set { inputStartTime = value; }
+			set { inputStartTime = value; OnPropertyChanged(); }
 		}
 
 		private string inputEndTime;
@@ -98,7 +113,23 @@ namespace AppointmentScheduler.ViewModel
 		public string InputEndTime
 		{
 			get { return inputEndTime; }
-			set { inputEndTime = value; }
+			set { inputEndTime = value; OnPropertyChanged(); }
+		}
+
+		public DateTime InputStartDateTime
+		{
+			get
+			{
+				return CombineDateAndTime(InputStartDate, InputStartTime);
+			}
+		}
+
+		public DateTime InputEndDateTime
+		{
+			get
+			{
+				return CombineDateAndTime(InputEndDate, InputEndTime);
+			}
 		}
 
 
