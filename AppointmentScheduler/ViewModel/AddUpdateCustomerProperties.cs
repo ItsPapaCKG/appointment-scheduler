@@ -16,6 +16,17 @@ namespace AppointmentScheduler.ViewModel
 
 		public RelayCommand UpdateCustomerConfirm => new(execute => UpdateCustomerCommand(SelectedCustomer), canExecute => CanAddCustomer());
 
+
+        public void TrimInputs()
+        {
+            InputCustomerName = InputCustomerName.Trim();
+            InputAddress1 = InputAddress1.Trim();
+            InputAddress2 = InputAddress2.Trim();
+            InputCity = InputCity.Trim();
+            InputCountry = InputCountry.Trim();
+            InputPhone = InputPhone.Trim();
+            InputPostalCode = InputPostalCode.Trim();
+        }
         public bool CanAddCustomer()
         {
 			return InputCustomerName != "" && InputAddress1 != "" && InputCity != "" && InputCountry != "" && InputPostalCode != "" && InputPhone != "";
@@ -23,6 +34,8 @@ namespace AppointmentScheduler.ViewModel
 
         private void AddCustomerCommand()
         {
+            TrimInputs();
+
 			var name = InputCustomerName.ToLower();
 			var address1 = InputAddress1.ToLower();
 			var address2 = InputAddress2.ToLower();
@@ -30,26 +43,12 @@ namespace AppointmentScheduler.ViewModel
 			var postal = InputPostalCode.ToLower();
 			var country = InputCountry.ToLower();
 			var phone = InputPhone.ToLower();
-			var cit = Cities.Last();
 
 			try
 			{
 				var customer = new Customer();
 
 				Address addressFound = Addresses.FirstOrDefault(a => a.address.ToLower() == address1 && a.address2.ToLower() == address2 && a.postalCode == postal && a.phone == phone && a.City.city.ToLower() == city && a.City.Country.country.ToLower() == country);
-
-				if (addressFound is not null)
-				{
-					customer.customerId = Customers.Last().customerId + 1;
-					customer.customerName = name;
-					customer.addressId = addressFound.addressId;
-					customer.active = 1;
-					customer.createDate = DateTime.UtcNow;
-					customer.createdBy = inputUsername;
-					customer.lastUpdate = DateTime.UtcNow;
-					customer.lastUpdateBy = inputUsername;
-					customer.Address = addressFound;
-				}
 
 
 
@@ -130,6 +129,8 @@ namespace AppointmentScheduler.ViewModel
 
 		public void UpdateCustomerCommand(Customer customer)
 		{
+            TrimInputs();
+
             var name = InputCustomerName.ToLower();
             var address1 = InputAddress1.ToLower();
             var address2 = InputAddress2.ToLower();
@@ -272,24 +273,57 @@ namespace AppointmentScheduler.ViewModel
 		public string InputCity
 		{
 			get { return inputCity; }
-			set { inputCity = value; OnPropertyChanged(); }
-		}
+			set
+            {
+                if (value.Length > 50)
+                {
+                    inputCity = value.Substring(0, 50);
+                }
+                else
+                {
+                    inputCity = value;
+                }
+                OnPropertyChanged();
+            }
+        }
 
 		private string inputPostalCode = "";
 
 		public string InputPostalCode
 		{
 			get { return inputPostalCode; }
-			set { inputPostalCode = value; OnPropertyChanged(); }
-		}
+			set
+            {
+                if (value.Length > 10)
+                {
+                    inputPostalCode = value.Substring(0, 10);
+                }
+                else
+                {
+                    inputPostalCode = value;
+                }
+                OnPropertyChanged();
+            }
+        }
 
 		private string inputCountry;
 
 		public string InputCountry
 		{
 			get { return inputCountry; }
-			set { inputCountry = value; OnPropertyChanged(); }
-		}
+			set
+            {
+                if (value.Length > 50)
+                {
+                    inputCountry = value.Substring(0, 50);
+                }
+                else
+                {
+                    inputCountry = value;
+                }
+                OnPropertyChanged();
+            }
+        }
 
 
 		private string inputPhone = "";
@@ -297,8 +331,19 @@ namespace AppointmentScheduler.ViewModel
 		public string InputPhone
 		{
 			get { return inputPhone; }
-			set { inputPhone = value; OnPropertyChanged(); }
-		}
+			set
+            {
+                if (value.Length > 20)
+                {
+                    inputPhone = value.Substring(0, 20);
+                }
+                else
+                {
+                    inputPhone = value;
+                }
+                OnPropertyChanged();
+            }
+        }
 
 	}
 }
