@@ -2,16 +2,12 @@
 using AppointmentScheduler.Model;
 using AppointmentScheduler.View;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.Internal;
-using System;
-using System.Collections.Generic;
+
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
+
 using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
 
 namespace AppointmentScheduler.ViewModel
@@ -58,7 +54,7 @@ namespace AppointmentScheduler.ViewModel
 
                 if (authenticated)
                 {
-
+                    LoginLogWriter.LogUserLogin(InputUsername);
                     CheckForAlerts();
                     WindowService.OpenNewWindow<MainWindow>();
                     WindowService.CloseFirstWindow();
