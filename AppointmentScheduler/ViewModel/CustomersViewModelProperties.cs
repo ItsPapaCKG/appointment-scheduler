@@ -13,7 +13,7 @@ namespace AppointmentScheduler.ViewModel
     public partial class MainViewModel
     {
         public RelayCommand AddCustomer => new(execute => AddCustomerWindow(), canExecute => { return true; });
-        public RelayCommand UpdateCustomer => new(execute => LoadCustomersWindow(), canExecute => { return true; });
+        public RelayCommand UpdateCustomer => new(execute => UpdateCustomerWindow(SelectedCustomer), canExecute => { return true; });
         public RelayCommand DeleteCustomer => new(execute => DeleteCustomerCommand(), canExecute => { return SelectedCustomer is not null; });
 
         public void AddCustomerWindow()
@@ -21,9 +21,18 @@ namespace AppointmentScheduler.ViewModel
             WindowService.OpenNewWindow<AddUpdateCustomer>();
         }
 
-        public void UpdateCustomerWindow()
+        public void UpdateCustomerWindow(Customer customer)
         {
+            WindowService.OpenNewWindow<AddUpdateCustomer>();
+            ((AddUpdateCustomer)WindowService.ActiveWindow).SetModifyMode();
 
+            InputCustomerName = customer.customerName;
+            InputAddress1 = customer.Address.address;
+            InputAddress2 = customer.Address.address2;
+            InputCity = customer.Address.City.city;
+            InputPostalCode = customer.Address.postalCode;
+            InputCountry = customer.Address.City.Country.country;
+            InputPhone = customer.Address.phone;
         } 
         public void DeleteCustomerCommand() 
         {
