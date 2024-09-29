@@ -38,6 +38,7 @@ namespace AppointmentScheduler.ViewModel
         // For appointment EXCEPTION HANDLING, Please see AddUpdateAppointmentProperties.cs for AddAppointment method
         public void AddAppointmentWindow()
         {
+            ClearInputs();
             WindowService.OpenNewWindow<AddUpdateAppointment>();
         }
 

@@ -2279,11 +2279,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\AppointmentScheduler.csproj",
+      "projectUniqueName": "C:\\Users\\LabUser\\Source\\Repos\\appointment-scheduler\\AppointmentScheduler\\AppointmentScheduler.csproj",
       "projectName": "AppointmentScheduler",
-      "projectPath": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\AppointmentScheduler.csproj",
+      "projectPath": "C:\\Users\\LabUser\\Source\\Repos\\appointment-scheduler\\AppointmentScheduler\\AppointmentScheduler.csproj",
       "packagesPath": "C:\\Users\\LabUser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LabUser\\source\\repos\\AppointmentScheduler\\AppointmentScheduler\\obj\\",
+      "outputPath": "C:\\Users\\LabUser\\Source\\Repos\\appointment-scheduler\\AppointmentScheduler\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

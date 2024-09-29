@@ -75,6 +75,7 @@ namespace AppointmentScheduler.ViewModel
 
 		public void ClearInputs()
 		{
+			SelectedApptCustomer = null;
             InputTitle = "";
             InputDescription = "";
             InputLocation = "";
@@ -86,6 +87,7 @@ namespace AppointmentScheduler.ViewModel
         }
 		public void AddAppointmentCommand()
 		{
+
 			TrimApptsInputs();
 
 			try

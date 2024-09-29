@@ -16,7 +16,16 @@ namespace AppointmentScheduler.ViewModel
 
 		public RelayCommand UpdateCustomerConfirm => new(execute => UpdateCustomerCommand(SelectedCustomer), canExecute => CanAddCustomer());
 
-
+        public void ClearCustomerInputs()
+        {
+            InputCustomerName = "";
+            InputAddress1 = "";
+            InputAddress2 = "";
+            InputCity = "";
+            InputPostalCode = "";
+            InputCountry = "";
+            InputPhone = "";
+        }
         public void TrimInputs()
         {
             InputCustomerName = InputCustomerName.Trim();
@@ -124,6 +133,7 @@ namespace AppointmentScheduler.ViewModel
 				return;
 			}
 
+            ClearCustomerInputs();
 			WindowService.CloseActiveWindow();
         }
 
@@ -209,6 +219,7 @@ namespace AppointmentScheduler.ViewModel
                 return;
             }
 
+            ClearCustomerInputs();
             WindowService.CloseActiveWindow();
         }
 

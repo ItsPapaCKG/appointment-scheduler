@@ -18,6 +18,7 @@ namespace AppointmentScheduler.ViewModel
 
         public void AddCustomerWindow()
         {
+            ClearCustomerInputs();
             WindowService.OpenNewWindow<AddUpdateCustomer>();
         }
 
