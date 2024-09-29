@@ -15,7 +15,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Customer ID" Binding="{Binding customerId}" Width="3*"/>
                     <DataGridTextColumn Header="Name" Binding="{Binding customerName}" Width="3*"/>
-                    <DataGridTextColumn Header="Appointments" Binding="{Binding AppointmentCount}" Width="3*"/>
+                    <!--<DataGridTextColumn Header="Appointments" Binding="{Binding AppointmentCount}" Width="3*"/>-->
                 </DataGrid.Columns>
             </DataGrid>
             

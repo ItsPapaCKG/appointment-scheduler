@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,11 @@ namespace AppointmentScheduler.View
 
             Debug.WriteLine($"ColumnHeader = columnName");
 
+        }
+
+        public void SetReportHeader(string s)
+        {
+            ReportHeader.Content = s;
         }
 
         public void GenColumns()

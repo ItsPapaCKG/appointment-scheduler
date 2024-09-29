@@ -14,6 +14,8 @@ namespace AppointmentScheduler.ViewModel
     public partial class MainViewModel
     {
         public RelayCommand AppointmentTypes => new(execute => AppointmentTypesCountByMonth(), canExecute => { return true; });
+        public RelayCommand UserSchedules => new(execute => AllUsersAppointments(), canExecute => { return true; });
+        public RelayCommand CustomerAppointments => new(execute => AllCustomersAppointments(), canExecute => { return true; });
 
 
         private List<string> alltypes;
@@ -84,12 +86,72 @@ namespace AppointmentScheduler.ViewModel
             ReportResult = report;
             WindowService.OpenNewWindow<ReportsWindow>();
             ((ReportsWindow)WindowService.ActiveWindow).GenColumns();
+            ((ReportsWindow)WindowService.ActiveWindow).SetReportHeader("Appointment types per month");
 
         }
 
         public void AllUsersAppointments()
         {
+            var usersAppts = Appointments
+                .OrderBy(a => a.User.userName)
+                    .ThenBy(a => a.start);
 
+            var report = new ObservableCollection<ExpandoObject>();
+
+            foreach (var appt in usersAppts)
+            {
+                dynamic apt = new ExpandoObject();
+
+                var aptD = (IDictionary<string, object>)apt;
+
+                DateTime startTime = DateTime.SpecifyKind(appt.start,DateTimeKind.Utc);
+
+                aptD["User"] = appt.User.userName;
+                aptD["Time"] = TimeZoneInfo.ConvertTimeFromUtc(startTime, TimeZoneInfo.Local);
+                aptD["Customer"] = appt.Customer.customerName;
+
+                report.Add(apt);
+            }
+
+            ReportResult = report;
+            WindowService.OpenNewWindow<ReportsWindow>();
+            ((ReportsWindow)WindowService.ActiveWindow).GenColumns();
+            ((ReportsWindow)WindowService.ActiveWindow).SetReportHeader("User schedules");
+
+        }
+
+        public void AllCustomersAppointments()
+        {
+            var customersGrouped = Appointments
+                .GroupBy(a => a.Customer.customerName)
+                .Select(group =>
+                new 
+                {
+                    Customer = group.Key,
+                    Count = group.Count()
+                }
+                );
+                    
+
+            var report = new ObservableCollection<ExpandoObject>();
+
+            foreach (var customer in customersGrouped)
+            {
+                dynamic cst = new ExpandoObject();
+
+                var cust = (IDictionary<string, object>)cst;
+
+
+                cust["Customer"] = customer.Customer;
+                cust["Total Appointments"] = customer.Count;
+
+                report.Add(cst);
+            }
+
+            ReportResult = report;
+            WindowService.OpenNewWindow<ReportsWindow>();
+            ((ReportsWindow)WindowService.ActiveWindow).GenColumns();
+            ((ReportsWindow)WindowService.ActiveWindow).SetReportHeader("Appointments per Customer");
         }
     }
 }
