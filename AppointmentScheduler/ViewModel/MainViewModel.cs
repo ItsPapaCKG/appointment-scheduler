@@ -122,6 +122,7 @@ namespace AppointmentScheduler.ViewModel
         {
             var nAppointments = Connection.Appointments
                                      .Include(p => p.Customer)
+                                     .Include(p => p.User)
                                      .OrderBy(a => a.appointmentId)
                                      .ToList();
 

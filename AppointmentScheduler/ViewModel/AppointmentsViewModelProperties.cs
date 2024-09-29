@@ -41,10 +41,14 @@ namespace AppointmentScheduler.ViewModel
             InputContact = appt.contact;
             InputType = appt.type;
             InputURL = appt.url;
-            InputStartDate = appt.start.Date;
-            InputStartTime = appt.start.ToString("HH:mm");
-            InputEndDate = appt.end.Date;
-            InputEndTime = appt.end.ToString("HH:mm");
+
+            DateTime apptStart = DateTime.SpecifyKind(appt.start, DateTimeKind.Utc);
+            DateTime apptEnd = DateTime.SpecifyKind(appt.end, DateTimeKind.Utc);
+
+            InputStartDate = TimeZoneInfo.ConvertTimeFromUtc(apptStart, TimeZoneInfo.Local);
+            InputStartTime = InputStartDate.ToString("HH:mm");
+            InputEndDate = TimeZoneInfo.ConvertTimeFromUtc(apptEnd, TimeZoneInfo.Local);
+            InputEndTime = InputEndDate.ToString("HH:mm");
         }
 
         public void DeleteAppointmentCommand(Appointment appt)

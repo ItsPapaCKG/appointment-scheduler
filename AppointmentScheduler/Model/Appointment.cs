@@ -43,5 +43,7 @@ namespace AppointmentScheduler.Model
 
         public Customer Customer { get; set; }
 
+        public User User { get; set; }
+
     }
 }

@@ -4,15 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppointmentScheduler.View"
+        xmlns:helpers="clr-namespace:AppointmentScheduler.Helpers"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="AppointmentsWindow" Height="450" Width="800">
+    <Window.Resources>
+        <helpers:TimeZoneConverter x:Key="TZConverter"/>
+    </Window.Resources>
     <Grid>
-        <DataGrid ItemsSource="{Binding Appointments}" SelectedItem="{Binding SelectedAppointment, Mode=TwoWay}"  Margin="18,68,18,55"/>
-        <Label Content="Appointments" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="53" Width="205"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="18,384,18,10">
+        <StackPanel>
+            <Label Content="Appointments" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="53" Width="205"/>
+            <DataGrid Height="230" ItemsSource="{Binding Appointments}" AutoGenerateColumns="False" SelectedItem="{Binding SelectedAppointment, Mode=TwoWay}" Margin="20" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding title}" Width="10*"/>
+                <DataGridTextColumn Header="Customer" Binding="{Binding Customer.customerName}" Width="15*"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding description}" Width="25*"/>
+                <DataGridTextColumn Header="Start" Binding="{Binding start, Converter={StaticResource TZConverter}}" Width="20*"/>
+                <DataGridTextColumn Header="End" Binding="{Binding end, Converter={StaticResource TZConverter}}" Width="20*"/>
+                <DataGridTextColumn Header="Consultant" Binding="{Binding User.userName}" Width="10*"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+        <StackPanel Height="40" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Command="{Binding AddAppointment}" Width="100" Content="Add Customer" Margin="5"/>
             <Button Command="{Binding UpdateAppointment}" Width="100" Content="Update Customer" Margin="5"/>
             <Button Command="{Binding DeleteAppointment}" Width="100" Content="Delete Customer" Margin="5"/>
+        </StackPanel>
         </StackPanel>
 
     </Grid>

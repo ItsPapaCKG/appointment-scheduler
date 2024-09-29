@@ -4,14 +4,63 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AppointmentScheduler.ViewModel
 {
     public partial class MainViewModel
     {
+        public RelayCommand AddAppointmentConfirm => new(execute => AddAppointmentCommand(), canExecute => { return true; });
+        public RelayCommand UpdateAppointmentConfirm => new(execute => UpdateAppointmentCommand(SelectedAppointment), canExecute => { return true; });
 
-		public DateTime CombineDateAndTime(DateTime date, string time)
+		public bool DoesAppointmentTimeConflict(DateTime start, DateTime end)
+		{
+			// ( start > a.start && start < a.end ) || ( end > a.start && end < a.end )
+
+			bool doesConflict = Appointments.Any(a => a.User.userName == inputUsername && (start > a.start && start < a.end) || (end > a.start && end < a.end));
+
+			return doesConflict;
+		}
+
+		public bool StartTimeInputIsValid() 
+		{
+			string pattern = @"([01]?[0-9]|2[0-3]):[0-5][0-9]\s?(AM|am|PM|pm)$";
+
+			return Regex.IsMatch(InputStartTime.Trim(), pattern);
+		}
+		public bool EndTimeInputIsValid() 
+		{
+            string pattern = @"([01]?[0-9]|2[0-3]):[0-5][0-9]\s?(AM|am|PM|pm)$";
+
+            return Regex.IsMatch(InputEndTime.Trim(), pattern);
+        }
+		public void AddAppointmentCommand()
+		{
+			try
+			{
+				if ()
+
+				if (DoesAppointmentTimeConflict(InputStartDateTime, InputEndDateTime))
+				{
+					throw new Exception("The submiited appointment times overlap with another appointment assigned to you. Unable to add appointment.");
+				}
+
+
+
+
+			}
+			catch (Exception ex) 
+			{
+					
+			}
+		}
+
+		public void UpdateAppointmentCommand(Appointment appt)
+		{
+
+		}
+        public DateTime CombineDateAndTime(DateTime date, string time)
 		{
 			string[] t = time.Split(":");
 			int hours = int.Parse(t[0]);
