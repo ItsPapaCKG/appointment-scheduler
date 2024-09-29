@@ -12,6 +12,15 @@ namespace AppointmentScheduler.ViewModel
 {
     public partial class MainViewModel
     {
+		private User currentUser;
+
+		public User CurrentUser
+		{
+			get { return currentUser; }
+			set { currentUser = value; }
+		}
+
+
 		private string inputUsername = "";
 
 		public string InputUsername

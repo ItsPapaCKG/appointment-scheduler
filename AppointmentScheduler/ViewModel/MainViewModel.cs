@@ -58,6 +58,8 @@ namespace AppointmentScheduler.ViewModel
                     WindowService.OpenNewWindow<MainWindow>();
                     WindowService.CloseFirstWindow();
 
+                    CurrentUser = c.Users.FirstOrDefault(u => u.userName == InputUsername);
+
                     var date = SelectedDate;
                 }
                 else if (UserCulture.Name == "fr-FR")
@@ -157,6 +159,7 @@ namespace AppointmentScheduler.ViewModel
         public void ApplyConnectionChanges()
         {
             Connection.SaveChanges();
+            PopulateFiltered<Appointment>("MainAppointmentsList", Appointments, a => a.start.Date == SelectedDate);
             PopulateEFCollections();
         }
     }

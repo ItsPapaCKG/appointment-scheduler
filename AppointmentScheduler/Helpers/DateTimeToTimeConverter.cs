@@ -21,7 +21,7 @@ namespace AppointmentScheduler.Helpers
 
                 DateTime cd = TimeZoneInfo.ConvertTimeFromUtc(d, TimeZoneInfo.Local);
 
-                string final = d.ToString("HH:mm");
+                string final = cd.ToString("HH:mm");
                 return final;
             }
 

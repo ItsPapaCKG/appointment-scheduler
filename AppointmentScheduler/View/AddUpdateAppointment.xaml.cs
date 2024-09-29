@@ -31,11 +31,11 @@ namespace AppointmentScheduler.View
             MainViewModel vm = (MainViewModel)DataContext;
 
             btAction.Content = "Update Appointment";
-            //btAction.Command = vm.commandName;
+            btAction.Command = vm.UpdateAppointmentConfirm;
         }
         private void TextBox_Time(object sender, TextCompositionEventArgs e)
         {
-            string regexData = @"^[0-9:]+$";
+            string regexData = @"^[0-9AaPpMm:]+$";
 
             if (!Regex.IsMatch(e.Text, regexData))
             {
