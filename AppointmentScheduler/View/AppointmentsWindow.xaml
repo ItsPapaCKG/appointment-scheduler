@@ -27,9 +27,9 @@
         </DataGrid>
 
         <StackPanel Height="40" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Command="{Binding AddAppointment}" Width="100" Content="Add Customer" Margin="5"/>
-            <Button Command="{Binding UpdateAppointment}" Width="100" Content="Update Customer" Margin="5"/>
-            <Button Command="{Binding DeleteAppointment}" Width="100" Content="Delete Customer" Margin="5"/>
+            <Button Command="{Binding AddAppointment}" Width="150" Content="Add Appointment" Margin="5"/>
+                <Button Command="{Binding UpdateAppointment}" Width="150" Content="Update Appointment" Margin="5"/>
+                <Button Command="{Binding DeleteAppointment}" Width="150" Content="Delete Appointment" Margin="5"/>
         </StackPanel>
         </StackPanel>
 
