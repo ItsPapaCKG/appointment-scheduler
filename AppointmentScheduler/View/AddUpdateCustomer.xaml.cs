@@ -3,6 +3,7 @@ using AppointmentScheduler.Model;
 using AppointmentScheduler.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -32,6 +33,8 @@ namespace AppointmentScheduler.View
         public AddUpdateCustomer()
         {
             InitializeComponent();
+
+            this.Closing += OnClose;
         }
 
         public void SetModifyMode()
@@ -69,6 +72,13 @@ namespace AppointmentScheduler.View
                 e.Handled = true;
             }
 
+        }
+
+        private void OnClose(object? e, CancelEventArgs c)
+        {
+            MainViewModel vm = (MainViewModel)DataContext;
+
+            vm.ClearInputs();
         }
     }
 }

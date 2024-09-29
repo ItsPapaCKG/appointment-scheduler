@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\App.xaml
-61783914840
+7-469529926
 
-272139973629
+28-1663733687
 2191826362525
-View\AddUpdateAppointment.xaml;View\AddUpdateCustomer.xaml;View\AppointmentsWindow.xaml;View\CustomersWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;
+View\AddUpdateAppointment.xaml;View\AddUpdateCustomer.xaml;View\AppointmentAlert.xaml;View\AppointmentsWindow.xaml;View\CustomersWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;
 
 False
 

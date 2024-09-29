@@ -1,9 +1,11 @@
-﻿using System;
+﻿using AppointmentScheduler.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -22,6 +24,18 @@ namespace AppointmentScheduler.View
         public MainWindow()
         {
             InitializeComponent();
+
+            this.Loaded += OnL;
+        }
+
+        private void OnL(object o, RoutedEventArgs e)
+        {
+            MainViewModel vm = (MainViewModel)DataContext;
+
+            if (vm.WindowService.alert is not null)
+            {
+                vm.WindowService.alert.BringIntoView();
+            }
         }
     }
 }

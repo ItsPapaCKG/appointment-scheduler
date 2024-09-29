@@ -15,14 +15,35 @@ namespace AppointmentScheduler.ViewModel
         public RelayCommand AddAppointmentConfirm => new(execute => AddAppointmentCommand(), canExecute => { return true; });
         public RelayCommand UpdateAppointmentConfirm => new(execute => UpdateAppointmentCommand(SelectedAppointment), canExecute => { return true; });
 
-		public bool DoesAppointmentTimeConflict(DateTime s, DateTime e)
+		public bool DoesAppointmentTimeConflict(DateTime start, DateTime end)
 		{
 			// ( start > a.start && start < a.end ) || ( end > a.start && end < a.end )
 
-			DateTime start = TimeZoneInfo.ConvertTimeToUtc(s);
-			DateTime end = TimeZoneInfo.ConvertTimeToUtc(e);
+			//DateTime start = TimeZoneInfo.ConvertTimeToUtc(s);
+			//DateTime end = TimeZoneInfo.ConvertTimeToUtc(e);
+
+			TimeZoneInfo easternTime = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
 
 			bool doesConflict = Appointments.Any(a => a.User.userName == inputUsername && (start > a.start && start < a.end) || (end > a.start && end < a.end) || ( start == a.start && end == a.end ));
+
+			DateTime easternStart = TimeZoneInfo.ConvertTimeFromUtc(start, easternTime);
+			DateTime easternEnd = TimeZoneInfo.ConvertTimeFromUtc(end, easternTime);
+
+			TimeSpan eightOclock = new TimeSpan(8, 0, 0);
+			TimeSpan fiveOclock = new TimeSpan(17, 0, 0);
+
+			TimeSpan startTime = easternStart.TimeOfDay;
+			TimeSpan endTime = easternEnd.TimeOfDay;
+
+			if (!(startTime >= eightOclock && startTime <= fiveOclock)) 
+			{
+				throw new Exception("Start time must be between the hours of 8:00AM and 5:00PM Eastern Standard Time.");
+			}
+
+			if (!(endTime >= eightOclock && endTime <= fiveOclock)) 
+			{
+                throw new Exception("End time must be between the hours of 8:00AM and 5:00PM Eastern Standard Time.");
+            }
 
 			return doesConflict;
 		}
@@ -51,6 +72,18 @@ namespace AppointmentScheduler.ViewModel
 			InputStartTime = InputStartTime.Trim();
 			InputEndTime = InputEndTime.Trim();
 		}
+
+		public void ClearInputs()
+		{
+            InputTitle = "";
+            InputDescription = "";
+            InputLocation = "";
+            InputContact = "";
+            InputType = "";
+            InputURL = "";
+            InputStartTime = "";
+            InputEndTime = "";
+        }
 		public void AddAppointmentCommand()
 		{
 			TrimApptsInputs();
@@ -103,6 +136,8 @@ namespace AppointmentScheduler.ViewModel
 				Appointments.Add(appt);
 				Connection.Appointments.Add(appt);
 				ApplyConnectionChanges();
+
+				ClearInputs();
 
                 WindowService.CloseActiveWindow();
             }
@@ -159,6 +194,9 @@ namespace AppointmentScheduler.ViewModel
 				appt.lastUpdateBy = CurrentUser.userName;
 
                 ApplyConnectionChanges();
+
+				ClearInputs();
+
                 WindowService.CloseActiveWindow();
             }
             catch (Exception ex)
@@ -168,14 +206,11 @@ namespace AppointmentScheduler.ViewModel
         }
         public DateTime CombineDateAndTime(DateTime date, string time)
 		{
-			string[] t = time.Split(":");
+			string dateTime = date.ToString("yyyy-MM-dd") + " " + time;
 
-			int hours = int.Parse(t[0]);
-			int minutes = int.Parse(t[1].Substring(0,2));
-
-			DateTime newDT = date.AddHours(hours).AddMinutes(minutes);
-
-			newDT = TimeZoneInfo.ConvertTimeToUtc(newDT);
+			DateTime dt = DateTime.Parse(dateTime);
+			dt = DateTime.SpecifyKind(dt, DateTimeKind.Local);
+			DateTime newDT = TimeZoneInfo.ConvertTimeToUtc(dt);
 
 			return newDT;
 		}
@@ -245,7 +280,7 @@ namespace AppointmentScheduler.ViewModel
 		public DateTime InputStartDate
 		{
 			get { return inputStartDate; }
-			set { inputStartDate = value; OnPropertyChanged(); }
+			set { inputStartDate = value; InputEndDate = value; OnPropertyChanged(); }
 		}
 
 		private DateTime inputEndDate = DateTime.Today;

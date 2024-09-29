@@ -13,6 +13,9 @@
     <Compile Update="View\AddUpdateCustomer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AppointmentAlert.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AppointmentsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AddUpdateCustomer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AppointmentAlert.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AppointmentsWindow.xaml">

@@ -21,6 +21,7 @@ namespace AppointmentScheduler.ViewModel
         public RelayCommand Authenticate => new(execute => AuthenticateUser(), canExecute => { if (InputUsername != "" && InputPassword != "") { return true; } return false; });
         public RelayCommand OpenCustomersWindow => new(execute => LoadCustomersWindow(), canExecute => { return true; });
         public RelayCommand OpenAppointmentsWindow => new(execute => LoadAppointmentsWindow(), canExecute => { return true; });
+        public RelayCommand DismissAlert => new(execute => WindowService.alert.Close(), canExecute => { return true; });
 
         public WindowManagementService WindowService { get; set; }
         public EFSQLTools Connection { get; set; }
@@ -55,6 +56,8 @@ namespace AppointmentScheduler.ViewModel
 
                 if (authenticated)
                 {
+
+                    CheckForAlerts();
                     WindowService.OpenNewWindow<MainWindow>();
                     WindowService.CloseFirstWindow();
 
@@ -94,6 +97,28 @@ namespace AppointmentScheduler.ViewModel
         public void LoadCustomersWindow()
         {
             WindowService.OpenNewWindow<CustomersWindow>();
+        }
+
+        public void CheckForAlerts()
+        {
+            if (Appointments.Count != 0)
+            {
+                PopulateFiltered<Appointment>("ApptAlerts", Appointments, a => IsWithin15Minutes(a.start));
+
+                if (ApptAlerts.Count != 0)
+                {
+                    WindowService.OpenNewWindow<AppointmentAlert>();
+                }
+            }
+        }
+
+        public bool IsWithin15Minutes(DateTime dt)
+        {
+            DateTime now = DateTime.UtcNow;
+
+            TimeSpan diff = dt - now;
+
+            return diff.TotalMinutes > 0 && diff.TotalMinutes <= 15;
         }
 
         public void LoadAppointmentsWindow()

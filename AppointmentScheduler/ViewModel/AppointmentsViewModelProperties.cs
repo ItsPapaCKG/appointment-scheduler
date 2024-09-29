@@ -3,6 +3,7 @@ using AppointmentScheduler.Model;
 using AppointmentScheduler.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,14 +22,25 @@ namespace AppointmentScheduler.ViewModel
         public Appointment SelectedAppointment
         {
             get { return selectedAppointment; }
-            set { selectedAppointment = value; }
+            set { selectedAppointment = value; OnPropertyChanged(); }
         }
 
+        private ObservableCollection<Appointment> apptAlerts;
+
+        public ObservableCollection<Appointment> ApptAlerts
+        {
+            get { return apptAlerts; }
+            set { apptAlerts = value; }
+        }
+
+
+        // For appointment EXCEPTION HANDLING, Please see AddUpdateAppointmentProperties.cs for AddAppointment method
         public void AddAppointmentWindow()
         {
             WindowService.OpenNewWindow<AddUpdateAppointment>();
         }
 
+        // For appointment EXCEPTION HANDLING, Please see AddUpdateAppointmentProperties.cs for UpdateAppointment method
         public void UpdateAppointmentWindow(Appointment appt)
         {
             WindowService.OpenNewWindow<AddUpdateAppointment>();
@@ -51,6 +63,7 @@ namespace AppointmentScheduler.ViewModel
             InputEndTime = InputEndDate.ToString("HH:mm");
         }
 
+        // For appointment EXCEPTION HANDLING, see here for delete operations
         public void DeleteAppointmentCommand(Appointment appt)
         {
             try
@@ -58,6 +71,7 @@ namespace AppointmentScheduler.ViewModel
                 Appointments.Remove(appt);
                 Connection.Appointments.Remove(appt);
                 ApplyConnectionChanges();
+
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

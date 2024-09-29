@@ -1,4 +1,5 @@
-﻿using AppointmentScheduler.ViewModel;
+﻿using AppointmentScheduler.View;
+using AppointmentScheduler.ViewModel;
 using Org.BouncyCastle.Asn1.X509.Qualified;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace AppointmentScheduler.Helpers
     public class WindowManagementService
     {
         public ObservableCollection<Window> Windows { get; set; }
+
+        public AppointmentAlert alert { get; set; }
 
         public Window ActiveWindow { get; set; }
 
@@ -41,6 +44,12 @@ namespace AppointmentScheduler.Helpers
         {
             Window w = new windowType();
             w.DataContext = ViewModel;
+
+            if (typeof(windowType) == typeof(AppointmentAlert))
+            {
+                alert = (AppointmentAlert)w;
+                w.Topmost = true;
+            }
 
             Windows.Add(w);
             ActiveWindow = w;

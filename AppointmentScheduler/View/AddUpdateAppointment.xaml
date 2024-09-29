@@ -28,7 +28,7 @@
         <DatePicker SelectedDate="{Binding InputStartDate}" HorizontalAlignment="Left" Margin="101,283,0,0" VerticalAlignment="Top" Width="165"/>
         <TextBox Text="{Binding InputStartTime}" PreviewTextInput="TextBox_Time" ToolTip="Please use format 00:00" HorizontalAlignment="Left" Margin="281,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="86" Height="24"/>
         <Label Content="End" HorizontalAlignment="Left" Margin="66,311,0,0" VerticalAlignment="Top"/>
-        <DatePicker SelectedDate="{Binding InputEndDate}" HorizontalAlignment="Left" Margin="101,312,0,0" VerticalAlignment="Top" Width="165"/>
+        <!--<DatePicker SelectedDate="{Binding InputEndDate}" HorizontalAlignment="Left" Margin="101,312,0,0" VerticalAlignment="Top" Width="165"/>-->
         <TextBox Text="{Binding InputEndTime}" PreviewTextInput="TextBox_Time" ToolTip="Please use format 00:00" HorizontalAlignment="Left" Margin="281,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="86" Height="24"/>
         <Button Command="{Binding AddAppointmentConfirm}" Name="btAction" Content="Add Appointment" HorizontalAlignment="Left" Margin="38,376,0,0" VerticalAlignment="Top" Height="33" Width="130"/>
 
