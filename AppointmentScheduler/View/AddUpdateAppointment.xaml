@@ -1,0 +1,33 @@
+﻿<Window x:Class="AppointmentScheduler.View.AddUpdateAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppointmentScheduler.View"
+        mc:Ignorable="d"
+        Title="AddUpdateAppointment" Height="450" Width="400">
+    <Grid>
+        <Label Content="Customer" HorizontalAlignment="Left" Margin="35,44,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="101,44,0,0" TextWrapping="Wrap" Text="{Binding SelectedApptCustomer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <Label Content="Title" HorizontalAlignment="Left" Margin="63,74,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="101,74,0,0" TextWrapping="Wrap" Text="{Binding InputTitle, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="25,104,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="101,104,0,0" TextWrapping="Wrap" Text="{Binding InputDescription, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="53"/>
+        <Label Content="Location" HorizontalAlignment="Left" Margin="41,162,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="101,162,0,0" TextWrapping="Wrap" Text="{Binding InputLocation, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <Label Content="Contact" HorizontalAlignment="Left" Margin="44,192,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="101,192,0,0" TextWrapping="Wrap" Text="{Binding InputContact, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="60,222,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="101,222,0,0" TextWrapping="Wrap" Text="{Binding InputType, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <Label Content="URL" HorizontalAlignment="Left" Margin="65,252,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="101,252,0,0" TextWrapping="Wrap" Text="{Binding InputURL, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <Label Content="Start" HorizontalAlignment="Left" Margin="62,283,0,0" VerticalAlignment="Top"/>
+        <DatePicker SelectedDate="{Binding InputStartDate}" HorizontalAlignment="Left" Margin="101,283,0,0" VerticalAlignment="Top" Width="165"/>
+        <TextBox Text="{Binding InputStartTime}" ToolTip="Please use format 00:00" HorizontalAlignment="Left" Margin="281,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="86" Height="24"/>
+        <Label Content="End" HorizontalAlignment="Left" Margin="66,311,0,0" VerticalAlignment="Top"/>
+        <DatePicker SelectedDate="{Binding InputEndDate}" HorizontalAlignment="Left" Margin="101,312,0,0" VerticalAlignment="Top" Width="165"/>
+        <TextBox Text="{Binding InputEndTime}" ToolTip="Please use format 00:00" HorizontalAlignment="Left" Margin="281,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="86" Height="24"/>
+        <Button Content="Add Appointment" HorizontalAlignment="Left" Margin="38,376,0,0" VerticalAlignment="Top" Height="33" Width="130"/>
+
+    </Grid>
+</Window>
