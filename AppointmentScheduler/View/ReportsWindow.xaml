@@ -9,12 +9,7 @@
     <Grid>
         <StackPanel>
             <Label Content="Report" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="53" Width="450"/>
-            <DataGrid ColumnWidth="*" Height="230" ItemsSource="{Binding ReportResult, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="True" AutoGeneratingColumn="OnAutoGeneratingColumn" Margin="20" IsReadOnly="True">
-                <!--<DataGrid.Columns>
-                    <DataGridTextColumn Header="Month" Binding="{Binding Month}"/>
-                    <DataGridTextColumn Header="Scrum" Binding="{Binding Scrum}"/>
-                    <DataGridTextColumn Header="t" Binding="{Binding t}"/>
-                </DataGrid.Columns>-->
+            <DataGrid Name="dataGrid1" ColumnWidth="*" Height="230" ItemsSource="{Binding ReportResult, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="True" AutoGeneratingColumn="OnAutoGeneratingColumn" Margin="20" IsReadOnly="True">
 
             </DataGrid>
 

@@ -16,6 +16,15 @@ namespace AppointmentScheduler.ViewModel
         public RelayCommand AppointmentTypes => new(execute => AppointmentTypesCountByMonth(), canExecute => { return true; });
 
 
+        private List<string> alltypes;
+
+        public List<string> AllTypes
+        {
+            get { return alltypes; }
+            set { alltypes = value; OnPropertyChanged(); }
+        }
+
+
         private ObservableCollection<ExpandoObject> reportResult;
 
         public ObservableCollection<ExpandoObject> ReportResult
@@ -51,7 +60,7 @@ namespace AppointmentScheduler.ViewModel
                     .ToDictionary(g => g.Key, g => g.Count())
                 });
 
-            var allTypes = appointments.Select(a => a.type).Distinct().ToList();
+            AllTypes = appointments.Select(a => a.type).Distinct().ToList();
 
             foreach (var monthgroup in groupedAppts)
             {
@@ -61,17 +70,25 @@ namespace AppointmentScheduler.ViewModel
 
                 rowD["Month"] = new DateTime(DateTime.Today.Year, monthgroup.Month, 1).ToString("MMMM");
 
-                foreach (var type in allTypes)
+                foreach (var type in AllTypes)
                 {
                     rowD[type] = monthgroup.AppointmentTypes.ContainsKey(type) ? monthgroup.AppointmentTypes[type] : 0;
                 }
 
                 report.Add(row);
 
+
             }
+
 
             ReportResult = report;
             WindowService.OpenNewWindow<ReportsWindow>();
+            ((ReportsWindow)WindowService.ActiveWindow).GenColumns();
+
+        }
+
+        public void AllUsersAppointments()
+        {
 
         }
     }

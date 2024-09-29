@@ -36,5 +36,23 @@ namespace AppointmentScheduler.View
             Debug.WriteLine($"ColumnHeader = columnName");
 
         }
+
+        public void GenColumns()
+        {
+            var rows = dataGrid1.ItemsSource.OfType<IDictionary<string, object>>();
+            var columns = rows.SelectMany(d => d.Keys).Distinct(StringComparer.OrdinalIgnoreCase);
+
+            foreach (string text in columns)
+            {
+                // now set up a column and binding for each property
+                var column = new DataGridTextColumn
+                {
+                    Header = text,
+                    Binding = new Binding(text)
+                };
+
+                dataGrid1.Columns.Add(column);
+            }
+        }
     }
 }
