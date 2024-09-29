@@ -60,3 +60,7 @@ C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\bin\Debu
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\ref\AppointmentScheduler.dll
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\AppointmentAlert.g.cs
 C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\AppointmentAlert.baml
+C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\ReportsSelector.g.cs
+C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\ReportsWindow.g.cs
+C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\ReportsSelector.baml
+C:\Users\LabUser\source\repos\AppointmentScheduler\AppointmentScheduler\obj\Debug\net8.0-windows\View\ReportsWindow.baml

@@ -1,0 +1,18 @@
+﻿<Window x:Class="AppointmentScheduler.View.ReportsSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppointmentScheduler.View"
+        mc:Ignorable="d"
+        Title="ReportsSelector" Height="450" Width="400">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Height="300">
+            <Label FontSize="30" HorizontalContentAlignment="Center" Content="Select a report"></Label>
+            <Button Command="{Binding AppointmentTypes}" Content="Appointment Types by Month" Margin="10" Height="30"/>
+            <Button Command="{Binding UserSchedules}" Content="User schedules" Margin="10" Height="30"/>
+            <Button Command="{Binding CustomerAppointments}" Content="Appointments per Customer" Margin="10" Height="30"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

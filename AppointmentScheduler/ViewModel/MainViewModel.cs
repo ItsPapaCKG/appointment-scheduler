@@ -22,6 +22,8 @@ namespace AppointmentScheduler.ViewModel
         public RelayCommand OpenCustomersWindow => new(execute => LoadCustomersWindow(), canExecute => { return true; });
         public RelayCommand OpenAppointmentsWindow => new(execute => LoadAppointmentsWindow(), canExecute => { return true; });
         public RelayCommand DismissAlert => new(execute => WindowService.alert.Close(), canExecute => { return true; });
+        public RelayCommand DismissCurrent => new(execute => WindowService.CloseActiveWindow(), canExecute => { return true; });
+        public RelayCommand OpenReportsWindow => new(execute => LoadReportsWindow(), canExecute => { return true; });
 
         public WindowManagementService WindowService { get; set; }
         public EFSQLTools Connection { get; set; }
@@ -97,6 +99,11 @@ namespace AppointmentScheduler.ViewModel
         public void LoadCustomersWindow()
         {
             WindowService.OpenNewWindow<CustomersWindow>();
+        }
+
+        public void LoadReportsWindow()
+        {
+            WindowService.OpenNewWindow<ReportsSelector>();
         }
 
         public void CheckForAlerts()

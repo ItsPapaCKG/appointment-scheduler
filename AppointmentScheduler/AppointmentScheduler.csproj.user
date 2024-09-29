@@ -25,6 +25,12 @@
     <Compile Update="View\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ReportsSelector.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ReportsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\AddUpdateAppointment.xaml">
@@ -46,6 +52,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ReportsSelector.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ReportsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

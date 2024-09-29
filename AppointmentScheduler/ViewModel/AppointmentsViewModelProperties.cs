@@ -4,6 +4,7 @@ using AppointmentScheduler.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,5 +78,19 @@ namespace AppointmentScheduler.ViewModel
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public void GenerateReports()
+        {
+
+            // Group appointments by month, then by appointment type
+
+            //               MonthName   Scrum   In-person   Etc   ...     ...
+            // End result == Month       1,      5,          6,    9,      2
+
+
+
+        }
+
+        
     }
 }

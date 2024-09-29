@@ -12,7 +12,7 @@
     <Window.Resources>
         <helpers:DateTimeToTimeConverter x:Key="TimeConverter"/>
     </Window.Resources>
-    
+
     <Grid>
         <Calendar Name="userCalendar" SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding}" HorizontalAlignment="Left" Margin="50,180,0,0" VerticalAlignment="Top" Height="166" Width="178" />
         <DataGrid ItemsSource="{Binding MainAppointmentsList, UpdateSourceTrigger=PropertyChanged}"
@@ -43,6 +43,12 @@
             <Grid>
                 <Image Source="Media/calendar-icon.png" Width="50" Margin="0,-10,0,0"/>
                 <Label Margin="0,40,0,-50">Appointments</Label>
+            </Grid>
+        </Button>
+        <Button Command="{Binding OpenReportsWindow}" HorizontalAlignment="Left" Margin="382,16,0,0" VerticalAlignment="Top" Height="120" Width="139">
+            <Grid>
+                <Image Source="/View/Media/checklist-icon.png" Width="50" Margin="0,-10,0,0"/>
+                <Label Margin="0,40,0,-50" Content="Reports"/>
             </Grid>
         </Button>
 
