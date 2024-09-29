@@ -48,6 +48,18 @@ namespace AppointmentScheduler.View
             return vm.CanAddCustomer();
         }
 
+        private void TextBox_Ints(object sender, TextCompositionEventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+
+            string regexData = @"^\d+$";
+
+            if (!Regex.IsMatch(e.Text, regexData))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void TextBox_Phone(object sender, TextCompositionEventArgs e)
         {
             TextBox textBox = sender as TextBox;

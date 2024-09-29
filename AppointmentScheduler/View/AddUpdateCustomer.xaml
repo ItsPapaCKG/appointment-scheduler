@@ -8,21 +8,21 @@
         Title="AddUpdateCustomer" Height="450" Width="500">
     <Grid Margin="0,17,0,-17">
         <Label Content="Name" HorizontalAlignment="Left" Margin="38,58,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="85,58,0,0" TextWrapping="Wrap" Text="{Binding InputCustomerName}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Margin="85,58,0,0" TextWrapping="Wrap" Text="{Binding InputCustomerName, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
 
         <Label Content="Address" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="31,98,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,98,0,0" TextWrapping="Wrap" Text="{Binding InputAddress1}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="329" Height="25"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,128,0,0" TextWrapping="Wrap" Text="{Binding InputAddress2}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="329" Height="25"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,98,0,0" TextWrapping="Wrap" Text="{Binding InputAddress1, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="329" Height="25"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,128,0,0" TextWrapping="Wrap" Text="{Binding InputAddress2, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="329" Height="25"/>
         
         <Label Content="City" HorizontalAlignment="Left" Margin="49,158,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="85,158,0,0" TextWrapping="Wrap" Text="{Binding InputCity}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Margin="85,158,0,0" TextWrapping="Wrap" Text="{Binding InputCity, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
         <Label Content="Postal Code" HorizontalAlignment="Left" Margin="260,158,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="333,158,0,0" TextWrapping="Wrap" PreviewTextInput="TextBox_Phone" Text="{Binding InputPostalCode}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="81" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Margin="333,158,0,0" Text="{Binding InputPostalCode, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="81" Height="25"/>
         <Label Content="Country" HorizontalAlignment="Left" Margin="28,188,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="85,188,0,0" TextWrapping="Wrap" Text="{Binding InputCountry}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Margin="85,188,0,0" TextWrapping="Wrap" Text="{Binding InputCountry, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
         
         <Label Content="Phone" HorizontalAlignment="Left" Margin="36,227,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="85,227,0,0" TextWrapping="Wrap" Text="{Binding InputPhone}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Margin="85,227,0,0" TextWrapping="Wrap" Text="{Binding InputPhone, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="TextBox_Phone" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
 
         <Button Name="btAction" Command="{Binding AddCustomerConfirm}"  Content="Add customer" HorizontalAlignment="Left" Margin="86,352,0,0" VerticalAlignment="Top" Height="36" Width="86"/>
     </Grid>
