@@ -13,7 +13,7 @@ namespace AppointmentScheduler.ViewModel
     public partial class MainViewModel
     {
         public RelayCommand AddCustomer => new(execute => AddCustomerWindow(), canExecute => { return true; });
-        public RelayCommand UpdateCustomer => new(execute => UpdateCustomerWindow(SelectedCustomer), canExecute => { return true; });
+        public RelayCommand UpdateCustomer => new(execute => UpdateCustomerWindow(SelectedCustomer), canExecute => { return SelectedCustomer is not null; });
         public RelayCommand DeleteCustomer => new(execute => DeleteCustomerCommand(), canExecute => { return SelectedCustomer is not null; });
 
         public void AddCustomerWindow()

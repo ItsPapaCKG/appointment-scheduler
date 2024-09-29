@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppointmentScheduler.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,13 @@ namespace AppointmentScheduler.View
             InitializeComponent();
         }
 
+        public void SetModifyMode()
+        {
+            MainViewModel vm = (MainViewModel)DataContext;
+
+            btAction.Content = "Update Appointment";
+            //btAction.Command = vm.commandName;
+        }
         private void TextBox_Time(object sender, TextCompositionEventArgs e)
         {
             string regexData = @"^[0-9:]+$";

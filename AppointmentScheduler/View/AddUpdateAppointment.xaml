@@ -8,7 +8,10 @@
         Title="AddUpdateAppointment" Height="450" Width="400">
     <Grid>
         <Label Content="Customer" HorizontalAlignment="Left" Margin="35,44,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="101,44,0,0" TextWrapping="Wrap" Text="{Binding SelectedApptCustomer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
+        <ComboBox HorizontalAlignment="Left" Margin="101,44,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"
+                  ItemsSource="{Binding Customers}"
+                  DisplayMemberPath="customerName"
+                  SelectedItem="{Binding SelectedApptCustomer}"/>
         <Label Content="Title" HorizontalAlignment="Left" Margin="63,74,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="101,74,0,0" TextWrapping="Wrap" Text="{Binding InputTitle, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="165" Height="25"/>
         <Label Content="Description" HorizontalAlignment="Left" Margin="25,104,0,0" VerticalAlignment="Top"/>
@@ -27,7 +30,7 @@
         <Label Content="End" HorizontalAlignment="Left" Margin="66,311,0,0" VerticalAlignment="Top"/>
         <DatePicker SelectedDate="{Binding InputEndDate}" HorizontalAlignment="Left" Margin="101,312,0,0" VerticalAlignment="Top" Width="165"/>
         <TextBox Text="{Binding InputEndTime}" PreviewTextInput="TextBox_Time" ToolTip="Please use format 00:00" HorizontalAlignment="Left" Margin="281,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="86" Height="24"/>
-        <Button Content="Add Appointment" HorizontalAlignment="Left" Margin="38,376,0,0" VerticalAlignment="Top" Height="33" Width="130"/>
+        <Button Name="btAction" Content="Add Appointment" HorizontalAlignment="Left" Margin="38,376,0,0" VerticalAlignment="Top" Height="33" Width="130"/>
 
     </Grid>
 </Window>

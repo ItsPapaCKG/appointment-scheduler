@@ -1,4 +1,5 @@
-﻿using AppointmentScheduler.Model;
+﻿using AppointmentScheduler.Helpers;
+using AppointmentScheduler.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,6 @@ namespace AppointmentScheduler.ViewModel
 {
     public partial class MainViewModel
     {
-
 
 		public DateTime CombineDateAndTime(DateTime date, string time)
 		{
