@@ -48,6 +48,7 @@ namespace AppointmentScheduler.ViewModel
             WindowService.OpenNewWindow<AddUpdateAppointment>();
             ((AddUpdateAppointment)WindowService.ActiveWindow).SetModifyMode();
 
+            CurrentApptId = appt.appointmentId;
             SelectedApptCustomer = appt.Customer;
             InputTitle = appt.title;
             InputDescription = appt.description;
@@ -60,9 +61,25 @@ namespace AppointmentScheduler.ViewModel
             DateTime apptEnd = DateTime.SpecifyKind(appt.end, DateTimeKind.Utc);
 
             InputStartDate = TimeZoneInfo.ConvertTimeFromUtc(apptStart, TimeZoneInfo.Local);
-            InputStartTime = InputStartDate.ToString("HH:mm");
+
+            if (UserCulture.Name == "fr-FR")
+            {
+                InputStartTime = InputStartDate.ToString("HH:mm tt");
+            }
+            else
+            {
+                InputStartTime = InputStartDate.ToString("hh:mm tt");
+            }
             InputEndDate = TimeZoneInfo.ConvertTimeFromUtc(apptEnd, TimeZoneInfo.Local);
-            InputEndTime = InputEndDate.ToString("HH:mm");
+
+            if (UserCulture.Name == "fr-FR")
+            {
+                InputEndTime = InputEndDate.ToString("HH:mm tt");
+            }
+            else
+            {
+                InputEndTime = InputEndDate.ToString("hh:mm tt");
+            }
         }
 
         // For appointment EXCEPTION HANDLING, see here for delete operations

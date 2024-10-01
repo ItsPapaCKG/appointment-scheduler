@@ -15,6 +15,15 @@ namespace AppointmentScheduler.ViewModel
         public RelayCommand AddAppointmentConfirm => new(execute => AddAppointmentCommand(), canExecute => { return true; });
         public RelayCommand UpdateAppointmentConfirm => new(execute => UpdateAppointmentCommand(SelectedAppointment), canExecute => { return true; });
 
+		private int currentApptId;
+
+		public int CurrentApptId
+		{
+			get { return currentApptId; }
+			set { currentApptId = value; OnPropertyChanged(); }
+		}
+
+
 		public bool DoesAppointmentTimeConflict(DateTime start, DateTime end)
 		{
 			// ( start > a.start && start < a.end ) || ( end > a.start && end < a.end )
@@ -24,7 +33,7 @@ namespace AppointmentScheduler.ViewModel
 
 			TimeZoneInfo easternTime = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
 
-			bool doesConflict = Appointments.Any(a => a.User.userName == inputUsername && (start > a.start && start < a.end) || (end > a.start && end < a.end) || ( start == a.start && end == a.end ));
+			bool doesConflict = Appointments.Any(a => a.User.userName == inputUsername && a.appointmentId != SelectedAppointment.appointmentId && ((start > a.start && start < a.end) || (end > a.start && end < a.end) || ( start == a.start && end == a.end )));
 
 			DateTime easternStart = TimeZoneInfo.ConvertTimeFromUtc(start, easternTime);
 			DateTime easternEnd = TimeZoneInfo.ConvertTimeFromUtc(end, easternTime);
@@ -50,13 +59,13 @@ namespace AppointmentScheduler.ViewModel
 
 		public bool StartTimeInputIsValid() 
 		{
-			string pattern = @"([01]?[0-9]|2[0-3]):[0-5][0-9]\s?(AM|am|PM|pm)$";
+			string pattern = @"([01]?[0-9]|2[0-3]):[0-5][0-9]\s?(AM|am|PM|pm)?$";
 
 			return Regex.IsMatch(InputStartTime.Trim(), pattern);
 		}
 		public bool EndTimeInputIsValid() 
 		{
-            string pattern = @"([01]?[0-9]|2[0-3]):[0-5][0-9]\s?(AM|am|PM|pm)$";
+            string pattern = @"([01]?[0-9]|2[0-3]):[0-5][0-9]\s?(AM|am|PM|pm)?$";
 
             return Regex.IsMatch(InputEndTime.Trim(), pattern);
         }

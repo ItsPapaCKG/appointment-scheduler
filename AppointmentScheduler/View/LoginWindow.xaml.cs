@@ -41,7 +41,7 @@ namespace AppointmentScheduler.View
             }
             else
             {
-                LoginLabel.Content = "Username w/o lang";
+                LoginLabel.Content = "English US or French (France) Only!";
                 PasswordLabel.Content = "Password w/o lang";
             }
         }
